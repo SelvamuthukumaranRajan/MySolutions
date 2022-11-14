@@ -21,9 +21,8 @@ public class App {
         System.out.println("Midddle element of linked list Approach1: "+linkedListObj.middleElementOfLinkedList(head));
         System.out.println("Midddle element of linked list Approach2: "+linkedListObj.middleElementOfLinkedListUsingPointer(head));
         System.out.println("Is palindrome linked list : "+linkedListObj.isPalindromeLikedList(head));
-        System.out.println("Reversed linked list : "+linkedListObj.linkedListToString(linkedListObj.reverseLinkedList(head)));
-        System.out.println("Given linked list : "+linkedListObj.linkedListToString(head));
         System.out.println("Is linked list have cycle : "+linkedListObj.linkedListHasCycle(head));
+        System.out.println("Reversed linked list : "+linkedListObj.linkedListToString(linkedListObj.reverseLinkedList(head)));
 
         Tree subtree2Left1 = new Tree(1,null,null);
         Tree subtree2Left2 = new Tree(3,null,null);

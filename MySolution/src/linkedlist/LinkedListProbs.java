@@ -4,6 +4,9 @@ public class LinkedListProbs {
    
     //To find nth element of linked list
     public int nthElementFromLast(Node head, int n){
+        if(head == null){
+            return -1;
+        }
         Node left = head;
         Node right = head;
 
@@ -24,12 +27,12 @@ public class LinkedListProbs {
 
     //To reverse linked list
     public Node reverseLinkedList(Node head){
-        if(head == null || head.child == null){
+        if(head == null){
             return head;
         }
         
-        Node current = head.child;
-        Node result = head;
+        Node current = head;
+        Node result = null;
 
         while(current!=null){
             Node nextChild = current.child;
@@ -42,6 +45,10 @@ public class LinkedListProbs {
 
     //To detect linked list cycle
     public boolean linkedListHasCycle(Node head){
+        if(head == null){
+            return false;
+        }
+
         Node fast = head;
         Node slow = head;
 
@@ -58,6 +65,10 @@ public class LinkedListProbs {
     //Middle element of the LinkedList
     //Approach 1
     public int middleElementOfLinkedList(Node head){
+        if(head == null){
+            return -1;
+        }
+
         Node current = head;
         int length = lengthOfLinkedList(head);
         for(int i=0; i<length/2; i++){
@@ -67,6 +78,10 @@ public class LinkedListProbs {
     }
     //Approach 2
     public int middleElementOfLinkedListUsingPointer(Node head){
+        if(head == null){
+            return -1;
+        }
+
         Node slow = head;
         Node fast = head;
         while(fast.child != null && fast.child.child != null){
@@ -78,6 +93,10 @@ public class LinkedListProbs {
 
     //Lenght of linked list
     public int lengthOfLinkedList(Node head){
+        if(head == null){
+            return 0;
+        }
+
         Node current = head;
         int result = 1;
         while(current.child!=null){
@@ -89,17 +108,21 @@ public class LinkedListProbs {
 
     //To check palindrome 
     public boolean isPalindromeLikedList(Node head){
-        Node original = head;
-        Node reversed = reverseLinkedList(head);
+        if(head == null){
+            return true;
+        }
 
-        System.out.println("Original:"+linkedListToString(original));
-        System.out.println("Reversed:"+linkedListToString(reversed));
-        return original==reversed;
+        StringBuilder original = new StringBuilder(linkedListToString(head));
+        return original.toString().equals(original.reverse().toString());
     }
 
 
     //Linked list to string
     public String linkedListToString(Node head){
+        if(head == null){
+            return "";
+        }
+
         StringBuilder result = new StringBuilder();
 
         while(head!=null){
