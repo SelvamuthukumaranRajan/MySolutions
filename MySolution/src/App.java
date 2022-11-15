@@ -1,4 +1,5 @@
 import linkedlist.*;
+import string.StringProbs;
 import tree.*;
 
 
@@ -14,15 +15,15 @@ public class App {
             head = new Node(i++, head);
         }
 
-        System.out.println("Linked Lists");
-        var linkedListObj = new LinkedListProbs();
-        System.out.println("Given linked list : "+linkedListObj.linkedListToString(head));
-        System.out.println("Fourth element from end of linked list : "+linkedListObj.nthElementFromLast(head, 4));
-        System.out.println("Midddle element of linked list Approach1: "+linkedListObj.middleElementOfLinkedList(head));
-        System.out.println("Midddle element of linked list Approach2: "+linkedListObj.middleElementOfLinkedListUsingPointer(head));
-        System.out.println("Is palindrome linked list : "+linkedListObj.isPalindromeLikedList(head));
-        System.out.println("Is linked list have cycle : "+linkedListObj.linkedListHasCycle(head));
-        System.out.println("Reversed linked list : "+linkedListObj.linkedListToString(linkedListObj.reverseLinkedList(head)));
+        // System.out.println("Linked Lists");
+        // var linkedListObj = new LinkedListProbs();
+        // System.out.println("Given linked list : "+linkedListObj.linkedListToString(head));
+        // System.out.println("Fourth element from end of linked list : "+linkedListObj.nthElementFromLast(head, 4));
+        // System.out.println("Midddle element of linked list Approach1: "+linkedListObj.middleElementOfLinkedList(head));
+        // System.out.println("Midddle element of linked list Approach2: "+linkedListObj.middleElementOfLinkedListUsingPointer(head));
+        // System.out.println("Is palindrome linked list : "+linkedListObj.isPalindromeLikedList(head));
+        // System.out.println("Is linked list have cycle : "+linkedListObj.linkedListHasCycle(head));
+        // System.out.println("Reversed linked list : "+linkedListObj.linkedListToString(linkedListObj.reverseLinkedList(head)));
 
         Tree subtree2Left1 = new Tree(1,null,null);
         Tree subtree2Left2 = new Tree(3,null,null);
@@ -42,5 +43,10 @@ public class App {
         // System.out.println("Level Order:"+treeObj.treeLevelOrder(treeHead).toString());
         // System.out.println("IsBST :"+treeObj.isBST(treeHead));
 
+
+        System.out.println("String");
+        var stringObj = new StringProbs();
+        System.out.println("Non repating character of a string : "+stringObj.findNonRepeatingCharacter("aabbdbc"));
+        System.out.println("is one away string : "+stringObj.isOneAwayString("abc","abcde"));
     }
 }
