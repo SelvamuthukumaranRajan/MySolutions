@@ -1,0 +1,60 @@
+public class ArrayProbs{
+    //Even values that are divisible by 3
+    public int averageValue(int[] nums) {
+        int average = 0, count = 0;
+        for(int num : nums){
+            if(num%6 == 0){
+                count++;
+                average+=num;
+            }
+        }
+        return count!=0 ? average/count : 0;
+    }
+
+    //To return number of distinct averages
+    public int distinctAverages(int[] nums) {
+        Set<Double> distinctAverages = new HashSet<>();
+        Arrays.sort(nums);
+        int i=0, j=nums.length-1;
+        while(i<j){
+            distinctAverages.add((double)(nums[i++]+nums[j--]));
+        }
+        return distinctAverages.size();
+    }
+
+    public int distinctAverages(int[] nums) {
+        Set<Double> distinctAverages = new HashSet<>();
+        Arrays.sort(nums);
+        int i=0, j=nums.length-1;
+        while(i<j){
+            distinctAverages.add((double)(nums[i++]+nums[j--]));
+        }
+        return distinctAverages.size();
+    }
+
+    // To apply two operations in array
+    // 1)nums[i] == nums[i + 1], then multiply nums[i] by 2 and set nums[i + 1] to 0
+    // 2)shift all the 0's to the end of the array
+    public int[] applyOperations(int[] nums) {
+        for(int i=0;i<nums.length-1;i++){
+            if(nums[i]==nums[i+1]){
+                nums[i] = nums[i]*2;
+                nums[i+1] = 0;
+            }
+        }
+        int j=0;
+        for(int i=0;i<nums.length;i++){
+            if(nums[i]!=0){
+                swapNums(nums,i,j++);   
+            }
+        }
+        return nums;
+    }
+    
+    
+    void swapNums(int[] nums, int pos1, int pos2){
+        int temp = nums[pos1];
+        nums[pos1] = nums[pos2];
+        nums[pos2] = temp;
+    }
+}
