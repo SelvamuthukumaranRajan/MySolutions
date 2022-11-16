@@ -14,7 +14,7 @@ public class StringProbs{
             if(map.get(character) == 1)
                 return character;
         }
-        return ' ';
+        return null;
     }
 
 

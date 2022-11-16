@@ -1,6 +1,7 @@
 import linkedlist.*;
-import string.StringProbs;
+import string.*;
 import tree.*;
+import Stream.*;
 
 
 public class App {
@@ -46,7 +47,8 @@ public class App {
 
         System.out.println("String");
         var stringObj = new StringProbs();
-        System.out.println("Non repating character of a string : "+stringObj.findNonRepeatingCharacter("aabbdbc"));
+        System.out.println("Non repating character of a string : "+stringObj.findNonRepeatingCharacter("ss"));
         System.out.println("is one away string : "+stringObj.isOneAwayString("abc","abcde"));
+        System.out.println("Average : "+ AverageBy3.solution(new int[]{43,9,75,76,25,96,46,85,19,29,88,2,5,24,60,26,76,24,96,82,97,97,72,35,21,77,82,30,94,55,76,94,51}));
     }
 }
