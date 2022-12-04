@@ -57,4 +57,17 @@ public class ArrayProbs{
         nums[pos1] = nums[pos2];
         nums[pos2] = temp;
     }
+
+    public int findMaxK(int[] nums) {
+        Set<Integer> set = new HashSet<>();
+        for (int num: nums){
+            set.add(num);
+		}
+        int ans = -1;
+        for (int num: nums) {
+            if (num > ans && set.contains(-num))
+                ans = num;
+        }
+        return ans;
+    }
 }
